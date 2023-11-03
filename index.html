@@ -13,10 +13,10 @@
         <a class="nav-link active" href="Home.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="About Me.html">About Me</a>
+        <a class="nav-link active" href="About Me.html">About Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" aria-disabled="Travel With Me!.html">Travel With Me!</a>
+        <a class="nav-link active" href="Travel With Me.html">Travel With Me</a>
       </li>
     </ul>
   </div>
@@ -25,27 +25,109 @@
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
+  <script type = "text/javascript">
+
+/***********************************************
+* Display time of last visit script- by JavaScriptKit.com
+* This notice MUST stay intact for use
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
+***********************************************/
+
+var days = 730; // days until cookie expires = 2 years.
+var lastvisit=new Object();
+var firstvisitmsg="This is your first visit to this page. Welcome!"; 
+lastvisit.subsequentvisitmsg="Welcome back visitor! Your last visit was on <b>[displaydate]</b>";
+
+lastvisit.getCookie=function(Name){ 
+var re=new RegExp(Name+"=[^;]+", "i"); 
+if (document.cookie.match(re)) 
+return document.cookie.match(re)[0].split("=")[1];
+return''; 
+}
+
+lastvisit.setCookie=function(name, value, days){ 
+var expireDate = new Date();
+
+var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
+}
+
+lastvisit.showmessage = function() {
+var wh = new Date();
+if (lastvisit.getCookie("visitc") == "") { 
+lastvisit.setCookie("visitc", wh, days); 
+document.write(firstvisitmsg);
+}
+
+else {
+var lv = lastvisit.getCookie("visitc");
+var lvp = Date.parse(lv);
+var now = new Date();
+now.setTime(lvp);
+var day = new Array("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat");
+var month = new Array ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+var dd = now.getDate();
+var dy = now.getDay();
+dy = day[dy];
+var mn = now.getMonth();
+mn = month[mn];
+yy = now.getFullYear();
+var hh = now.getHours();
+var ampm = "AM";
+if (hh >= 12) {ampm = "PM"}
+if (hh >12){hh = hh - 12};
+if (hh == 0) {hh = 12}
+if (hh < 10) {hh = "0" + hh};
+var mins = now.getMinutes();
+if (mins < 10) {mins = "0"+ mins}
+var secs = now.getSeconds();
+if (secs < 10) {secs = "0" + secs}
+var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
+document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
+}
+
+lastvisit.setCookie("visitc", wh, days);
+
+}
+
+lastvisit.showmessage();
+
+</script>
 </div>
-			<h1>Welcome to my website!!!</h1>
-			<p> Hows it going? </p> <br/>
-			<p>I just wanted to say hi to you since you're on my awesome webpage </p>
+			<h1>Welcome to my website!</h1>
+			<p> Hows it going? I hope that you took a moment today to do something kind for yourself. </p> <br/>
+			<p> Thank you for checking out my awesome webpage:) </p>
 			<img src="Doggo.jpeg" width="400px">
-			<a href= "https://www.google.ca/"> Go to Google!!!</a>
+			<a href= "https://novacoastaussies.ca/"> Learn more about this adorable breed here!</a> <br/>
+			<a href= "https://www.puppyspot.com/puppies-for-sale/breed/australian-shepherd"> Adopt an Australian Shepard here!</a>
 			<section>
-    <h3>Two Individual Images</h3>
+    <h3> Learn About Me</h3>
+    <p> When I'm not in class or working at the hospital, I enjoy cooking, weightlifting, and exploring the city. </p>
     <div>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/></a>
+      <a class="example-image-link" href="gym.jpeg" data-lightbox="example-1">
+
+      	<img class="example-image" src="gym.jpeg" width="400px" alt="image-1" />
+
+
+      </a>
+
+
+      <a class="example-image-link" href="cooking.jpeg" data-lightbox="example-2" data-title="Optional caption.">
+      	<img class="example-image" src="cooking.jpeg" width="400px" alt="image-1"/></a>
     </div>
 
-    <hr />
+    <hr/>
 
-    <h3>A Four Image Set</h3>
+    <h3> Travel With Me</h3>
+    <p> Join me on planning my upcoming solo trip to Spain and Portugal!</p>
     <div>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
+      <a class="example-image-link" href="Portugal.jpeg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="Portugal.jpeg" width="400px" alt=""/></a>
+
+      <a class="example-image-link" href="Fly.jpeg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="Fly.jpeg" width="250px" alt="" /></a>
+
+      <a class="example-image-link" href="Spain.jpeg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="Spain.jpeg" width="400px" alt="" /></a>
+
+      <a class="example-image-link" href="Travel.jpeg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="Travel.jpeg" width="400px" alt="" /></a>
     </div>
   </section>
 

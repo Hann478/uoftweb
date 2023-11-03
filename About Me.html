@@ -1,65 +1,143 @@
 <html>
-	<head>
-		<title>Hannah's Website</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/lightbox.min.css">
-		</head>
-		<body>
-		<ul>
-		  <li><a href="index.html">Home</a></li>
-		  <li><a href="AboutMe.html">About Me</a></li>
-		  <li><a href="Australian Shepards.html">Australian Shepards</a></li>
-		  <li><a href="puppo.html">Puppoos</a></li>
-	</ul>
-	<div class="card text-center">
+  <head>
+    <title>Hannah's Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    </head>
+    <body>
+    
+  <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-pills card-header-pills">
       <li class="nav-item">
-        <a class="nav-link active" href="Home.html">Home</a>
+        <a class="nav-link" href="Home.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="About Me.html">About Me</a>
+        <a class="nav-link disabled" href="About Me.html">About Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" aria-disabled="Australian Shepards.html">Australian Shepards</a>
+        <a class="nav-link" href="Travel With Me.html">Travel With Me</a>
       </li>
     </ul>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-			<h1>Welcome to my website!!!</h1>
-			<p> Hows it going? </p> <br/>
-			<p>I just wanted to say hi to you since you're on my awesome webpage </p>
-			<img src="Doggo.jpeg" width="400px">
-			<a href= "https://www.google.ca/"> Go to Google!!!</a>
-			<section>
-    <h3>Two Individual Images</h3>
-    <div>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-1.jpg" data-lightbox="example-1"><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-1.jpg" alt="image-1" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-2.jpg" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-2.jpg" alt="image-1"/></a>
-    </div>
+ <script type = "text/javascript">
 
-    <hr />
+/***********************************************
+* Display time of last visit script- by JavaScriptKit.com
+* This notice MUST stay intact for use
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
+***********************************************/
 
-    <h3>A Four Image Set</h3>
-    <div>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-3.jpg" alt=""/></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-4.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-4.jpg" alt="" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-5.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-5.jpg" alt="" /></a>
-      <a class="example-image-link" href="http://lokeshdhakar.com/projects/lightbox2/images/image-6.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="http://lokeshdhakar.com/projects/lightbox2/images/thumb-6.jpg" alt="" /></a>
-    </div>
-  </section>
+var days = 730; // days until cookie expires = 2 years.
+var lastvisit=new Object();
+var firstvisitmsg="This is your first visit to this page. Welcome!"; 
+lastvisit.subsequentvisitmsg="Welcome back visitor! Your last visit was on <b>[displaydate]</b>";
 
-  <section>
-    <p>
-      For more information, visit <a href="http://lokeshdhakar.com/projects/lightbox2/">http://lokeshdhakar.com/projects/lightbox2/</a>
-    </p>
-  </section>
+lastvisit.getCookie=function(Name){ 
+var re=new RegExp(Name+"=[^;]+", "i"); 
+if (document.cookie.match(re)) 
+return document.cookie.match(re)[0].split("=")[1];
+return''; 
+}
+
+lastvisit.setCookie=function(name, value, days){ 
+var expireDate = new Date();
+
+var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
+}
+
+lastvisit.showmessage = function() {
+var wh = new Date();
+if (lastvisit.getCookie("visitc") == "") { 
+lastvisit.setCookie("visitc", wh, days); 
+document.write(firstvisitmsg);
+}
+
+else {
+var lv = lastvisit.getCookie("visitc");
+var lvp = Date.parse(lv);
+var now = new Date();
+now.setTime(lvp);
+var day = new Array("Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat");
+var month = new Array ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+var dd = now.getDate();
+var dy = now.getDay();
+dy = day[dy];
+var mn = now.getMonth();
+mn = month[mn];
+yy = now.getFullYear();
+var hh = now.getHours();
+var ampm = "AM";
+if (hh >= 12) {ampm = "PM"}
+if (hh >12){hh = hh - 12};
+if (hh == 0) {hh = 12}
+if (hh < 10) {hh = "0" + hh};
+var mins = now.getMinutes();
+if (mins < 10) {mins = "0"+ mins}
+var secs = now.getSeconds();
+if (secs < 10) {secs = "0" + secs}
+var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
+document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
+}
+
+lastvisit.setCookie("visitc", wh, days);
+
+}
+
+lastvisit.showmessage();
+
+</script>
+     
+    <h3> About Me! </h3>
+    <P> My top 5 favourite hobbies are:</p> 
+      <p> 1. Working Out </p> 
+      <p> 2. Cooking & Baking </p> 
+      <p> 3. Social Media Content (editing, filming)</p> 
+        <p> 4. Traveling</p> 
+          <p> 5. Shopping (retail therapy or a good sale are my weaknesses..)</p> 
+          <p> An area I find inspiration is social media. Whether it's health and wellness influencers sharing what they eat in a day, fitness influencers detailing their workout routine, or solo travellers vlogging their trips around the world. <p>
+            <p> Here are a few of my favourite creators on Youtube! <p>
+      </section>
 
   <script src="js/lightbox-plus-jquery.min.js"></script>
-		</body>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/RHPIdIAVyT0?si=cft6taCJKRAEylzi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h_lnT_ISTX8?si=E4vcpOr_96YzNEHU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4YFIfmlgSg4?si=0fgzaUIcqP2QZ-Lq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eAFlpLgSGo8?si=QPU7cdc94PdEMO4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+ <P> Here is a list of fitness infleuncers on Instagram that I admire for their balanced & mindful lifestyle. Click the links to check them out! </p> 
+
+  <a href= "https://www.instagram.com/whitneyysimmons/"> 1. @whitneyysimmons </a> <br/>
+      <a href= "https://www.instagram.com/marissamcnamara/reels/"> 2. @marissamcnamara </a> <br/>
+       <a href= "https://www.instagram.com/gabbyschey/"> 3. @gabbyschey </a> <br/>
+      <a href= "https://www.instagram.com/samiclarke/"> 4. @msamiclarke </a>
+      <section>
+
+      <p> Interested in getting a workout in today? Here's a few songs to add to your playlist! <p>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/xI05RnZglMQ?si=_sMLfUUMAwGXOo5Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/p918H1RLX5g?si=p2AXo97Y_WYm-lhd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                   
+
+    <div>
+     <div>
+      <a class="example-image-link" href="weights.jpeg" data-lightbox="example-1">
+
+        <img class="example-image" src="weights.jpeg" width="250px" alt="image-1" />
+
+
+      </a>
+
+      <a class="example-image-link" href="food.jpeg" data-lightbox="example-2" data-title="Optional caption.">
+        <img class="example-image" src="food.jpeg" width="300px" alt="image-1"/></a>
+
+
+      <a class="example-image-link" href="run.jpeg" data-lightbox="example-2" data-title="Optional caption.">
+        <img class="example-image" src="run.jpeg" width="300px" alt="image-1"/></a>
+    </div>
+
+    </body>
 </html>
